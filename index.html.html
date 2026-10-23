@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>At Your Service Always LLC | Hanover, MD Assisted Living</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Config for Theme Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f6f5',
+                            100: '#e3e8e5',
+                            200: '#c7d3cc',
+                            500: '#5B7065',
+                            600: '#4a5d53',
+                            700: '#3d4d44',
+                            800: '#2D3A34',
+                            900: '#1e2723',
+                        },
+                        cream: {
+                            50: '#FFFDF9',
+                            100: '#F7F5F0',
+                            200: '#ECE8DF',
+                            300: '#DFD8C8',
+                        },
+                        warmAccent: {
+                            500: '#C87D55',
+                            600: '#B06842',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFDF9;
+            color: #2D3A34;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-pattern {
+            background-color: #F7F5F0;
+            background-image: radial-gradient(#5B7065 0.5px, transparent 0.5px), radial-gradient(#5B7065 0.5px, #F7F5F0 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sage-200 selection:text-sage-800">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-sage-800 text-cream-100 text-xs md:text-sm py-2 px-4 text-center flex justify-between items-center max-w-full">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-sage-200"></i>
+                <span class="hidden sm:inline">Located in peaceful</span> Hanover, MD
+            </span>
+            <div class="flex items-center gap-4">
+                <a href="tel:4437649953" class="hover:underline flex items-center gap-1 font-semibold text-cream-50">
+                    <i class="fa-solid fa-phone text-xs"></i> (443) 764-9953
+                </a>
+                <span class="hidden md:inline text-sage-500">|</span>
+                <span class="hidden md:inline text-xs text-cream-200">24/7 Residential Care</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all duration-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-sage-500 text-cream-50 flex items-center justify-center text-xl shadow-md group-hover:bg-sage-600 transition">
+                        <i class="fa-solid fa-house-heart"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-serif font-bold text-sage-800 block leading-none">At Your Service Always</span>
+                        <span class="text-xs tracking-wider text-sage-600 font-medium uppercase">Assisted Living Home - Made by Yours Truly, Jean</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="text-sage-800 hover:text-sage-500 font-medium transition">Our Home</a>
+                    <a href="#services" class="text-sage-800 hover:text-sage-500 font-medium transition">Care Levels</a>
+                    <a href="#amenities" class="text-sage-800 hover:text-sage-500 font-medium transition">Amenities</a>
+                    <a href="#gallery" class="text-sage-800 hover:text-sage-500 font-medium transition">Gallery</a>
+                    <a href="#testimonials" class="text-sage-800 hover:text-sage-500 font-medium transition">Families Share</a>
+                    <a href="#contact" class="text-sage-800 hover:text-sage-500 font-medium transition">Contact</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openModal()" class="bg-sage-500 hover:bg-sage-600 text-cream-50 px-5 py-2.5 rounded-full font-medium shadow-sm transition hover:shadow-md flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check text-sm"></i>
+                        <span>Schedule a Visit</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-sage-800 hover:bg-cream-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream-50 border-b border-cream-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Our Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Care Levels</a>
+            <a href="#amenities" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Amenities</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Gallery</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Families Share</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sage-800 font-medium hover:text-sage-500">Contact</a>
+            <div class="pt-2 border-t border-cream-200">
+                <button onclick="toggleMobileMenu(); openModal();" class="w-full bg-sage-500 hover:bg-sage-600 text-cream-50 py-3 rounded-xl font-medium shadow transition text-center flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Schedule a Private Tour</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cream-100 overflow-hidden py-12 lg:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sage-100 text-sage-800 text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-heart text-warmAccent-500"></i>
+                        <span>Intimate Senior Residence in Hanover, MD</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-sage-800 font-bold leading-tight">
+                        A Place That Feels Like Home. <br class="hidden sm:inline">
+                        <span class="italic font-normal text-sage-600">Care That Feels Like Family.</span>
+                    </h1>
+
+                    <p class="text-lg text-sage-700 max-w-2xl leading-relaxed">
+                        Nestled at 1413 Gesna Dr in peaceful Hanover, Maryland, At Your Service Always LLC provides compassionate 24/7 care, warm companionship, and personalized attention in an intimate residential setting.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <button onclick="openModal()" class="bg-sage-500 hover:bg-sage-600 text-cream-50 px-7 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-lg transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-alt"></i>
+                            <span>Schedule a Private Tour</span>
+                        </button>
+                        <a href="#gallery" class="border-2 border-sage-500 text-sage-800 hover:bg-sage-50 px-7 py-3.5 rounded-xl font-semibold transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-image"></i>
+                            <span>Explore Our Living Spaces</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-cream-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cream-50 text-sage-600 flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fa-solid fa-user-nurse"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sage-800 text-sm">24/7 Care</h4>
+                                <p class="text-xs text-sage-600">Dedicated staff</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cream-50 text-sage-600 flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sage-800 text-sm">Fresh Meals</h4>
+                                <p class="text-xs text-sage-600">Home-cooked daily</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cream-50 text-sage-600 flex items-center justify-center shadow-sm shrink-0">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sage-800 text-sm">Small Ratio</h4>
+                                <p class="text-xs text-sage-600">High attention</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Image -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-cream-50">
+                            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Caregiver holding hand of senior resident" 
+                                 class="w-full h-[420px] object-cover"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/800x600/5B7065/FFFDF9?text=Warm+Home+Environment';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-sage-900/40 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Stat Card -->
+                        <div class="absolute -bottom-6 -left-6 bg-cream-50 p-4 rounded-xl shadow-lg border border-cream-200 hidden sm:flex items-center gap-4 max-w-xs">
+                            <div class="w-12 h-12 rounded-lg bg-warmAccent-500/10 text-warmAccent-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-sage-800">Licensed & Certified</div>
+                                <div class="text-xs text-sage-600">State of Maryland Assisted Living Standards</div>
+                            </div>
+                        </div>
+
+                        <!-- Location Tag Floating -->
+                        <div class="absolute -top-4 -right-4 bg-sage-800 text-cream-50 px-4 py-2 rounded-full shadow-md text-xs font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin text-warmAccent-500"></i>
+                            <span>Hanover, MD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PHILOSOPHY & ABOUT -->
+    <section id="about" class="py-16 md:py-24 bg-cream-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-2">Welcome to At Your Service Always</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-sage-800 font-bold mb-4">Our Heartfelt Commitment to Care</h2>
+                <div class="w-20 h-1 bg-sage-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-sage-700 text-lg leading-relaxed">
+                    We believe that moving into assisted living shouldn't feel like moving into a facility. It should feel like opening a new chapter of comfort, dignity, and warmth in a real home surrounded by people who care.
+                </p>
+            </div>
+
+            <!-- Founder Note & Values -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 bg-cream-100 p-8 rounded-2xl border border-cream-200 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-sage-200 absolute top-6 left-6"></i>
+                    <div class="relative z-10 space-y-4">
+                        <p class="italic text-sage-800 text-base leading-relaxed pt-4">
+                            "When I founded At Your Service Always LLC, my vision was simple: build a sanctuary where residents retain their independence while enjoying complete peace of mind. Every meal is cooked with love, every caregiver knows your story, and every day brings a true sense of belonging.  Jean is the best for making this website!!!"
+                        </p>
+                        <div class="pt-4 border-t border-cream-200 flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=200" 
+                                 alt="Taylor Marcus" 
+                                 class="w-14 h-14 rounded-full object-cover border-2 border-sage-500"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/100x100/5B7065/FFFDF9?text=Founder';">
+                            <div>
+                                <h4 class="font-serif font-bold text-sage-800">Taylor Marcus</h4>
+                                <p class="text-xs text-sage-600">Founder, At Your Service Always LLC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Value 1 -->
+                    <div class="bg-white p-6 rounded-xl border border-cream-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-sage-50 text-sage-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-hands-holding-heart"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Dignity & Respect</h3>
+                        <p class="text-sm text-sage-600 leading-relaxed">
+                            We honor every resident's personal preferences, routine, and independence with utmost gentle respect.
+                        </p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-white p-6 rounded-xl border border-cream-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-sage-50 text-sage-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Home Comforts</h3>
+                        <p class="text-sm text-sage-600 leading-relaxed">
+                            Spacious, warm living areas, sunny patios, and cozy private suites tailored to individual tastes.
+                        </p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-white p-6 rounded-xl border border-cream-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-sage-50 text-sage-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Vibrant Living</h3>
+                        <p class="text-sm text-sage-600 leading-relaxed">
+                            Daily activities, gardening, music, crafts, and neighborhood outings designed for mental and social health.
+                        </p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="bg-white p-6 rounded-xl border border-cream-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-sage-50 text-sage-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-peace"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Family Peace of Mind</h3>
+                        <p class="text-sm text-sage-600 leading-relaxed">
+                            Open communication and transparent updates so family members feel relaxed and confident in our care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & CARE LEVELS (Interactive Tabs) -->
+    <section id="services" class="py-16 md:py-24 bg-cream-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-2">Tailored Support</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-sage-800 font-bold mb-4">Care Levels Tailored to You</h2>
+                <p class="text-sage-700">Select a care option below to discover how we customize support for each resident's unique needs.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 max-w-3xl mx-auto">
+                <button onclick="switchTab('adl')" id="tab-btn-adl" class="care-tab-btn px-5 py-3 rounded-xl font-semibold text-sm sm:text-base transition bg-sage-500 text-cream-50 shadow-md">
+                    <i class="fa-solid fa-person-walking-with-cane mr-2"></i>Assisted Living
+                </button>
+                <button onclick="switchTab('med')" id="tab-btn-med" class="care-tab-btn px-5 py-3 rounded-xl font-semibold text-sm sm:text-base transition bg-cream-50 text-sage-800 hover:bg-sage-100 border border-cream-200">
+                    <i class="fa-solid fa-pills mr-2"></i>Medication Support
+                </button>
+                <button onclick="switchTab('memory')" id="tab-btn-memory" class="care-tab-btn px-5 py-3 rounded-xl font-semibold text-sm sm:text-base transition bg-cream-50 text-sage-800 hover:bg-sage-100 border border-cream-200">
+                    <i class="fa-solid fa-brain mr-2"></i>Memory & Mobility
+                </button>
+                <button onclick="switchTab('respite')" id="tab-btn-respite" class="care-tab-btn px-5 py-3 rounded-xl font-semibold text-sm sm:text-base transition bg-cream-50 text-sage-800 hover:bg-sage-100 border border-cream-200">
+                    <i class="fa-solid fa-clock-rotate-left mr-2"></i>Respite Stays
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="max-w-4xl mx-auto bg-cream-50 rounded-2xl p-6 md:p-10 border border-cream-200 shadow-sm">
+                <!-- Content 1: Assisted Living -->
+                <div id="tab-content-adl" class="care-tab-content grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <span class="inline-block px-3 py-1 bg-sage-100 text-sage-800 text-xs font-bold rounded-md">Daily Living Assistance</span>
+                        <h3 class="text-2xl font-serif text-sage-800 font-bold">Personalized Daily Support</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed">
+                            Ideal for seniors who value independence but require a helping hand with daily tasks like bathing, dressing, grooming, and mobility.
+                        </p>
+                        <ul class="space-y-2 text-sm text-sage-800 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Assistance with dressing & bathing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Housekeeping & laundry included</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> 24-hour staff availability & emergency call button</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1581579438747-1dc8d1e05fec?auto=format&fit=crop&q=80&w=600" alt="Assisted daily living" class="rounded-xl shadow-md h-64 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Assisted+Living';">
+                    </div>
+                </div>
+
+                <!-- Content 2: Medication Support -->
+                <div id="tab-content-med" class="care-tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <span class="inline-block px-3 py-1 bg-sage-100 text-sage-800 text-xs font-bold rounded-md">Safety & Accuracy</span>
+                        <h3 class="text-2xl font-serif text-sage-800 font-bold">Medication Administration</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed">
+                            Our trained staff ensures all medications are taken correctly, on time, and accurately tracked according to doctor instructions.
+                        </p>
+                        <ul class="space-y-2 text-sm text-sage-800 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Timely dosage reminders & administration</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Pharmacy coordination & refills</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Routine health tracking & nurse oversight</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600" alt="Medication support" class="rounded-xl shadow-md h-64 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Medication+Support';">
+                    </div>
+                </div>
+
+                <!-- Content 3: Memory & Mobility -->
+                <div id="tab-content-memory" class="care-tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <span class="inline-block px-3 py-1 bg-sage-100 text-sage-800 text-xs font-bold rounded-md">Specialized Guidance</span>
+                        <h3 class="text-2xl font-serif text-sage-800 font-bold">Memory & Gentle Support</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed">
+                            Thoughtful, gentle guidance for residents with mild cognitive impairment or mobility constraints, ensuring safety without restricting comfort.
+                        </p>
+                        <ul class="space-y-2 text-sm text-sage-800 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Structured daily routines to reduce stress</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Secure, easy-to-navigate living areas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Gentle cognitive stimulation games & music therapy</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" alt="Memory support" class="rounded-xl shadow-md h-64 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Memory+Support';">
+                    </div>
+                </div>
+
+                <!-- Content 4: Respite Stays -->
+                <div id="tab-content-respite" class="care-tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <span class="inline-block px-3 py-1 bg-sage-100 text-sage-800 text-xs font-bold rounded-md">Short-Term Care</span>
+                        <h3 class="text-2xl font-serif text-sage-800 font-bold">Respite & Short Stays</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed">
+                            Temporary stays ideal for family caregivers needing a break, post-hospital recovery, or seniors trying out assisted living.
+                        </p>
+                        <ul class="space-y-2 text-sm text-sage-800 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Fully furnished private accommodations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Full access to all meals, amenities, & activities</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sage-500"></i> Flexible duration (weekly or monthly)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600" alt="Respite stay room" class="rounded-xl shadow-md h-64 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Respite+Care';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES & DAILY LIFE -->
+    <section id="amenities" class="py-16 md:py-24 bg-cream-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-2">Life at Arundel Haven</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-sage-800 font-bold mb-4">Thoughtful Amenities & Daily Joy</h2>
+                <p class="text-sage-700">Every detail of our home is curated to offer comfort, engagement, and genuine contentment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Grid Card 1 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 hover:border-sage-200 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Homestyle Dining</h3>
+                    <p class="text-xs sm:text-sm text-sage-600 leading-relaxed">
+                        Three nutritious, chef-prepared meals daily, tailored to dietary requirements with snacks always available.
+                    </p>
+                </div>
+
+                <!-- Grid Card 2 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 hover:border-sage-200 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Outdoor Patio & Garden</h3>
+                    <p class="text-xs sm:text-sm text-sage-600 leading-relaxed">
+                        Beautiful, secure outdoor courtyard with walking paths, raised garden beds, and comfortable seating.
+                    </p>
+                </div>
+
+                <!-- Grid Card 3 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 hover:border-sage-200 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-calendar-heart"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Daily Activity Schedule</h3>
+                    <p class="text-xs sm:text-sm text-sage-600 leading-relaxed">
+                        Crafts, gentle exercise, book discussions, live local music, and religious services if desired.
+                    </p>
+                </div>
+
+                <!-- Grid Card 4 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 hover:border-sage-200 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-sage-800 mb-2">Housekeeping & Laundry</h3>
+                    <p class="text-xs sm:text-sm text-sage-600 leading-relaxed">
+                        Full daily room tidying, weekly deep cleaning, and personal laundry care so residents can simply relax.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY / CAMPUS PREVIEW -->
+    <section id="gallery" class="py-16 md:py-24 bg-cream-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-2">Take a Virtual Look</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-sage-800 font-bold mb-4">A Preview of Our Home</h2>
+                <p class="text-sage-700">Warm interiors, cozy suites, and peaceful surrounding grounds in Hanover, MD.</p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=600" 
+                         alt="Private bedroom suite" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Private+Suite';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">Private Bedroom Suite</span>
+                            <span class="text-cream-200 text-xs">Warm natural light & accessible bathrooms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&q=80&w=600" 
+                         alt="Living Room" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Communal+Living';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">Communal Living Area</span>
+                            <span class="text-cream-200 text-xs">Cozy fireplace, reading nooks & seating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600" 
+                         alt="Dining Room" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Dining+Room';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">Family Dining Room</span>
+                            <span class="text-cream-200 text-xs">Shared family-style home meals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600" 
+                         alt="Garden patio" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Outdoor+Garden';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">Sunlit Patio & Garden</span>
+                            <span class="text-cream-200 text-xs">Enclosed outdoor space for walking & relaxing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&q=80&w=600" 
+                         alt="Activity Room" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Activity+Nook';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">Activity Nook</span>
+                            <span class="text-cream-200 text-xs">Puzzles, arts & crafts, and board games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" 
+                         alt="Healthcare Room" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/5B7065/FFFDF9?text=Care+Station';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition flex items-end p-4">
+                        <div>
+                            <span class="text-cream-100 font-serif font-bold block text-lg">24/7 Wellness Station</span>
+                            <span class="text-cream-200 text-xs">Staffed around the clock for health safety</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS FROM FAMILIES -->
+    <section id="testimonials" class="py-16 md:py-24 bg-cream-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-2">Word of Trust</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-sage-800 font-bold mb-4">What Families Are Saying</h2>
+                <p class="text-sage-700">Real peace of mind shared by loved ones of our residents.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm italic leading-relaxed">
+                            "Finding At Your Service Always LLC was an absolute blessing for our family. My mother smiles more now than she has in years. Taylor and the care team treat her like family."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-cream-200">
+                        <p class="font-bold text-sage-800 text-sm">Deborah R.</p>
+                        <p class="text-xs text-sage-600">Daughter of Resident • Hanover, MD</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm italic leading-relaxed">
+                            "The small residential environment makes all the difference compared to large commercial facilities. Dad gets personal attention every single day, and the home-cooked meals are wonderful."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-cream-200">
+                        <p class="font-bold text-sage-800 text-sm">Michael S.</p>
+                        <p class="text-xs text-sage-600">Son of Resident • Anne Arundel County</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-cream-100 p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm italic leading-relaxed">
+                            "When my aunt needed respite care after her surgery, At Your Service Always LLC took exceptional care of her. We felt totally at ease during her entire stay."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-cream-200">
+                        <p class="font-bold text-sage-800 text-sm">Karen L.</p>
+                        <p class="text-xs text-sage-600">Niece of Respite Resident • Hanover, MD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-16 md:py-24 bg-cream-100 border-t border-cream-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info & Map Placeholder -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-sage-500 font-semibold tracking-wider text-sm uppercase block mb-1">Get In Touch</span>
+                        <h2 class="text-3xl font-serif text-sage-800 font-bold mb-3">We'd Love to Welcome You</h2>
+                        <p class="text-sage-700 text-sm leading-relaxed">
+                            Have questions about placement, pricing, or care options? Call us directly or fill out the form to schedule a walk-through.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sage-600 font-medium">Direct Phone</p>
+                                <a href="tel:4437649953" class="text-lg font-bold text-sage-800 hover:text-sage-500 transition">(443) 764-9953</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sage-600 font-medium">Residence Address</p>
+                                <p class="text-base font-semibold text-sage-800">1413 Gesna Dr, Hanover, MD</p>
+                                <p class="text-xs text-sage-600">Anne Arundel County • Near BWI, Odenton, & Arundel Mills</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sage-500 text-cream-50 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sage-600 font-medium">Email Inquiries</p>
+                                <a href="mailto:info@atyourservicealwaysllc.com" class="text-base font-semibold text-sage-800 hover:text-sage-500 transition">info@atyourservicealwaysllc.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder Card -->
+                    <div class="bg-cream-50 rounded-2xl p-4 border border-cream-200 text-center space-y-2">
+                        <div class="h-32 bg-sage-100 rounded-xl flex items-center justify-center text-sage-600">
+                            <span class="text-sm font-medium flex items-center gap-2">
+                                <i class="fa-solid fa-map-location-dot text-lg"></i> 1413 Gesna Dr, Hanover, MD
+                            </span>
+                        </div>
+                        <p class="text-xs text-sage-600">Conveniently serving families throughout Hanover and Anne Arundel County.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="lg:col-span-7 bg-cream-50 p-6 sm:p-8 rounded-2xl border border-cream-200 shadow-sm">
+                    <h3 class="text-2xl font-serif text-sage-800 font-bold mb-2">Send an Inquiry or Book a Visit</h3>
+                    <p class="text-xs sm:text-sm text-sage-600 mb-6">Fill out the quick details below and our Care Director will reach out promptly.</p>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-sage-800 mb-1">Your Full Name *</label>
+                                <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-2.5 rounded-xl border border-cream-300 focus:outline-none focus:ring-2 focus:ring-sage-500 text-sm bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-sage-800 mb-1">Phone Number *</label>
+                                <input type="tel" required placeholder="(410) 000-0000" class="w-full px-4 py-2.5 rounded-xl border border-cream-300 focus:outline-none focus:ring-2 focus:ring-sage-500 text-sm bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-sage-800 mb-1">Email Address *</label>
+                                <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-cream-300 focus:outline-none focus:ring-2 focus:ring-sage-500 text-sm bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-sage-800 mb-1">Timeline for Care Needed</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-cream-300 focus:outline-none focus:ring-2 focus:ring-sage-500 text-sm bg-white">
+                                    <option>Immediate / Within 1-2 weeks</option>
+                                    <option>Within 1 Month</option>
+                                    <option>Exploring options for future</option>
+                                    <option>Respite Stay</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-sage-800 mb-1">How Can We Help You? / Loved One's Details</label>
+                            <textarea rows="4" placeholder="Tell us a little about your loved one's care requirements or preferred visit time..." class="w-full px-4 py-2.5 rounded-xl border border-cream-300 focus:outline-none focus:ring-2 focus:ring-sage-500 text-sm bg-white"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-sage-500 hover:bg-sage-600 text-cream-50 font-semibold py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Submit Request</span>
+                        </button>
+                    </form>
+
+                    <!-- Form Success Notification Box (Hidden by default) -->
+                    <div id="form-success-msg" class="hidden mt-4 p-4 bg-sage-100 border border-sage-300 text-sage-800 rounded-xl text-center text-sm font-medium">
+                        <i class="fa-solid fa-circle-check text-sage-600 text-lg mr-2"></i>
+                        Thank you! Your message has been received. We will call you back within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sage-800 text-cream-100 py-12 border-t border-sage-700">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-sage-700">
+                <!-- Brand -->
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-sage-500 text-cream-50 flex items-center justify-center text-sm font-bold">
+                            <i class="fa-solid fa-house-heart"></i>
+                        </div>
+                        <span class="text-xl font-serif font-bold text-cream-50">At Your Service Always LLC</span>
+                    </div>
+                    <p class="text-xs text-cream-200 max-w-sm leading-relaxed">
+                        A boutique, warm senior residential care home founded by Taylor Marcus, dedicated to promoting independence, dignity, and family peace of mind in Hanover, Maryland (Anne Arundel County).
+                    </p>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div>
+                    <h4 class="font-serif font-bold text-cream-50 text-sm mb-3">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-cream-200">
+                        <li><a href="#about" class="hover:text-cream-50 transition">Our Philosophy</a></li>
+                        <li><a href="#services" class="hover:text-cream-50 transition">Care Levels & Support</a></li>
+                        <li><a href="#amenities" class="hover:text-cream-50 transition">Daily Amenities</a></li>
+                        <li><a href="#gallery" class="hover:text-cream-50 transition">Virtual Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-cream-50 transition">Contact & Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Maryland Licensing Info -->
+                <div>
+                    <h4 class="font-serif font-bold text-cream-50 text-sm mb-3">Location & Licensing</h4>
+                    <p class="text-xs text-cream-200 leading-relaxed mb-2">
+                        1413 Gesna Dr, Hanover, MD<br>
+                        Anne Arundel County, MD
+                    </p>
+                    <span class="inline-block text-[11px] bg-sage-700 text-cream-200 px-2 py-1 rounded">
+                        Licensed Residential Care
+                    </span>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Accessibility -->
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-cream-300 gap-4">
+                <p>© 2026 At Your Service Always LLC. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span>Equal Housing Opportunity</span>
+                    <span>•</span>
+                    <span>ADA Accessible</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCHEDULE A VISIT MODAL POPUP -->
+    <div id="tour-modal" class="fixed inset-0 bg-sage-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream-50 w-full max-w-lg rounded-2xl border border-cream-200 shadow-2xl overflow-hidden relative animate-fadeIn">
+            <!-- Modal Header -->
+            <div class="bg-sage-800 text-cream-50 p-6 flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-serif font-bold">Schedule a Private Tour</h3>
+                    <p class="text-xs text-cream-200">Visit 1413 Gesna Dr, Hanover, MD & meet Taylor Marcus and the care team.</p>
+                </div>
+                <button onclick="closeModal()" class="text-cream-200 hover:text-cream-50 text-2xl focus:outline-none">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <form onsubmit="handleModalSubmit(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-sage-800 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="John Smith" class="w-full px-4 py-2.5 rounded-xl border border-cream-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sage-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-sage-800 mb-1">Phone *</label>
+                        <input type="tel" required placeholder="(410) 000-0000" class="w-full px-4 py-2.5 rounded-xl border border-cream-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sage-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-sage-800 mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full px-4 py-2.5 rounded-xl border border-cream-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sage-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-sage-800 mb-1">Care Level Interest</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl border border-cream-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sage-500">
+                        <option>Assisted Living</option>
+                        <option>Medication Management Support</option>
+                        <option>Memory & Mobility Guidance</option>
+                        <option>Respite / Temporary Stay</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-sage-800 mb-1">Special Questions or Notes</label>
+                    <textarea rows="2" placeholder="Any specific requirements or questions..." class="w-full px-4 py-2.5 rounded-xl border border-cream-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sage-500"></textarea>
+                </div>
+
+                <div class="pt-2 flex justify-end gap-3">
+                    <button type="button" onclick="closeModal()" class="px-5 py-2.5 rounded-xl border border-cream-300 text-xs font-semibold text-sage-800 hover:bg-cream-100">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-sage-500 hover:bg-sage-600 text-cream-50 text-xs font-semibold shadow">
+                        Confirm Tour Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Navigation Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Switch Tabs for Care Levels
+        function switchTab(tabKey) {
+            // Hide all tab content sections
+            const contents = document.querySelectorAll('.care-tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Reset tab button styling
+            const buttons = document.querySelectorAll('.care-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-sage-500', 'text-cream-50', 'shadow-md');
+                btn.classList.add('bg-cream-50', 'text-sage-800', 'border', 'border-cream-200');
+            });
+
+            // Active chosen content & style chosen button
+            document.getElementById(`tab-content-${tabKey}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${tabKey}`);
+            activeBtn.classList.remove('bg-cream-50', 'text-sage-800', 'border', 'border-cream-200');
+            activeBtn.classList.add('bg-sage-500', 'text-cream-50', 'shadow-md');
+        }
+
+        // Modal Controls
+        function openModal() {
+            document.getElementById('tour-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('tour-modal').classList.add('hidden');
+        }
+
+        // Handle Main Form Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-success-msg');
+            msg.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Handle Modal Form Submission
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your tour request has been submitted. Taylor Marcus and the team at At Your Service Always LLC look forward to meeting you soon in Hanover, MD!");
+            closeModal();
+        }
+    </script>
+</body>
+</html>
